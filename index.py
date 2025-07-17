@@ -1,28 +1,16 @@
-# import streamlit as st
-# from pytubefix import YouTube
-
-# st.title("🎥 YouTube Video Downloader")
-
-# url = st.text_input("Enter YouTube Video URL")
-
-# if url:
-#     try:
-#         yt = YouTube(url)
-#         st.video(url)
-#         st.success(f"Title: {yt.title}")
-#         stream = yt.streams.get_highest_resolution()
-#         if st.button("Download Video"):
-#             stream.download()
-#             st.success("✅ Download complete!")
-#     except Exception as e:
-#         st.error(f"❌ Error: {e}")
-
 import streamlit as st
 from pytubefix import YouTube
 from moviepy.video.io.VideoFileClip import VideoFileClip
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 
 import os
+
+st.set_page_config(
+    page_title="YOZO - YouTube Video Downloader",
+    page_icon="🎬",
+    layout="centered",
+    initial_sidebar_state="auto"
+)
 
 st.title("🎥 YouTube Downloader with High Quality & Progress")
 
@@ -36,7 +24,7 @@ def progress_func(stream, chunk, bytes_remaining):
 
 if url:
     try:
-        yt = YouTube(url, on_progress_callback=progress_func)
+        yt = YouTube(url, client='WEB', on_progress_callback=progress_func)
         st.video(url)
         st.success(f"Title: {yt.title}")
 

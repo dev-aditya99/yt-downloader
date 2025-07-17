@@ -1,3 +1,5 @@
 streamlit
 pytubefix
 moviepy
+yt-dlp
+ffmpeg
