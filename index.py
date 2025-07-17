@@ -24,7 +24,7 @@ def progress_func(stream, chunk, bytes_remaining):
 
 if url:
     try:
-        yt = YouTube(url, 'WEB', on_progress_callback=progress_func)
+        yt = YouTube(url, use_po_token="true", on_progress_callback=progress_func)
         st.video(url)
         st.success(f"Title: {yt.title}")
 
