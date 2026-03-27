@@ -2,7 +2,8 @@ import streamlit as st
 import requests
 from PIL import Image
 from io import BytesIO
-from duckduckgo_search import DDGS
+from ddgs import DDGS
+
 import instaloader
 import re
 

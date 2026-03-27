@@ -1,9 +1,8 @@
 streamlit
 requests
 Pillow
-duckduckgo-search
+ddgs
 instaloader 
-regex 
 pytubefix
 moviepy
 yt-dlp
